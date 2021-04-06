@@ -81,4 +81,9 @@ public class DateUtils {
 		
 		return dateString;
 	}
+	
+	public static String convertFromSheetName(String sheetName) {
+		Date date = parse("MMM yy", sheetName);
+		return format("MMMM yyyy", date);
+	}
 }

@@ -21,11 +21,14 @@ public class ExcelService {
 
 	@Autowired
 	PdfService pdfService;
+	
+	@Autowired
+	ExcelHelper excelHelper;
 
 	public ArrayList<String> save(MultipartFile file) {
 		ArrayList<String> filenameArrayList = new ArrayList();
 		try {
-			ArrayList<HashMap<Integer, ArrayList<String>>> dataArrayList = ExcelHelper.convertExcel(file.getInputStream());
+			ArrayList<HashMap<Integer, ArrayList<String>>> dataArrayList = excelHelper.convertExcel(file.getInputStream());
 
 			for (int i = 0; i < dataArrayList.size(); i++) {
 				HashMap<Integer, ArrayList<String>> dataHashMap = dataArrayList.get(i);

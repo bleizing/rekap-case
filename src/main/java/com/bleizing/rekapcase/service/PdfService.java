@@ -1,6 +1,7 @@
 package com.bleizing.rekapcase.service;
 
 import com.bleizing.rekapcase.event.HeaderFooterPageEvent;
+import com.bleizing.rekapcase.helper.FileHelper;
 import com.bleizing.rekapcase.property.FileStorageProperties;
 import com.bleizing.rekapcase.service.ExcelService;
 import com.bleizing.rekapcase.util.DateUtils;
@@ -46,10 +47,12 @@ public class PdfService {
 		try {
 			String dateString = DateUtils.getStartDate(dataHashMap.get(1).get(1).toString());
 			String monthYear = DateUtils.getMonthYear(dateString);
-			filename = "Rekap Transaksi Gagal Sistem ";
-			filename += (type == 2) ? "Native" : "";
-			filename += " - " + monthYear;
-			filename += ".pdf";
+//			filename = "Rekap Transaksi Gagal Sistem ";
+//			filename += (type == 2) ? "Native" : "";
+//			filename += " - " + monthYear;
+//			filename += ".pdf";
+			
+			filename = FileHelper.createFileNameByDate(dataHashMap.get(1).get(1).toString(), type);
 
 			logger.info("create pdf = " + filename);
 

@@ -23,9 +23,6 @@ public class TContent extends BaseModel {
     private Long id;
 
 	@NotNull
-	private String nama;
-
-	@NotNull
 	private String tanggal;
 
 	@NotNull
@@ -62,15 +59,7 @@ public class TContent extends BaseModel {
 	public void setId(Long id) {
 		this.id = id;
 	}
-
-	public String getNama() {
-		return nama;
-	}
-
-	public void setNama(String nama) {
-		this.nama = nama;
-	}
-
+	
 	public String getTanggal() {
 		return tanggal;
 	}
