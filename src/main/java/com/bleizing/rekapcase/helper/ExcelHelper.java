@@ -25,89 +25,90 @@ import com.itextpdf.text.pdf.PdfStructTreeController.returnType;
 
 public class ExcelHelper {
 	public static String TYPE = "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet";
-	
+
 	private static final Logger logger = LoggerFactory.getLogger(ExcelHelper.class);
 
-	  public static boolean hasExcelFormat(MultipartFile file) {
-	    if (!TYPE.equals(file.getContentType())) {
-	      return false;
-	    }
+	public static boolean hasExcelFormat(MultipartFile file) {
+		if (!TYPE.equals(file.getContentType())) {
+			return false;
+		}
 
-	    return true;
-	  }
+		return true;
+	}
 
-	  public static ArrayList<HashMap<Integer, ArrayList<String>>> convertExcel(InputStream is) {
-		  DataFormatter dataFormatter = new DataFormatter(new Locale("id", "ID"));
-	    try {
-	      Workbook workbook = new XSSFWorkbook(is);
-	      
-	      ArrayList<HashMap<Integer, ArrayList<String>>> sheetArrayList = new ArrayList<>();
-	      
-	      for (int i = 2; i > 0 ; i--) {
-	    	  logger.info("read sheet = -" + i);
-	    	  Sheet sheet = workbook.getSheetAt(workbook.getNumberOfSheets() - i);
-		      Iterator<Row> rows = sheet.iterator();
+	public static ArrayList<HashMap<Integer, ArrayList<String>>> convertExcel(InputStream is) {
+		DataFormatter dataFormatter = new DataFormatter(new Locale("id", "ID"));
+		try {
+			Workbook workbook = new XSSFWorkbook(is);
 
-		      int rowNumber = 0;
-		        
-		      HashMap<Integer, ArrayList<String>> rowHashMap = new HashMap<>();
-		      
-		      while (rows.hasNext()) {
-		        Row currentRow = rows.next();
+			ArrayList<HashMap<Integer, ArrayList<String>>> sheetArrayList = new ArrayList<>();
 
-		        // skip header
-		        if (rowNumber == 0) {
-		          rowNumber++;
-		          continue;
-		        }
+			for (int i = 2; i > 0 ; i--) {
+				logger.info("read sheet = -" + i);
+				
+				Sheet sheet = workbook.getSheetAt(workbook.getNumberOfSheets() - i);
+				Iterator<Row> rows = sheet.iterator();
 
-		        Iterator<Cell> cellsInRow = currentRow.iterator();
-		        
-		        ArrayList<String> rowArrayList = new ArrayList<>();
+				int rowNumber = 0;
 
-		        int cellIdx = 0;
-		        while (cellsInRow.hasNext()) {
-		          Cell currentCell = cellsInRow.next();
-		          
-		          switch (currentCell.getCellType()) {
-		            case STRING:
-		            	rowArrayList.add(currentCell.getRichStringCellValue().getString());
-		            	break;
-		            case NUMERIC:
-		            	if (DateUtil.isCellDateFormatted(currentCell)) {
-		            		String date = dataFormatter.formatCellValue(currentCell);
-		            		rowArrayList.add(date);
-		            	} else {
-		            		rowArrayList.add(currentCell.getNumericCellValue() + "");
-		            	}
-		            	break;
-		            case BOOLEAN:
-		            	rowArrayList.add(currentCell.getBooleanCellValue() + "");
-		            	break;
-		            case FORMULA:
-		            rowArrayList.add(currentCell.getCellFormula() + "");
-		            	break;
-//		            default: rowArrayList.add(" ");
-		          }
-		        
-		          cellIdx++;
-		        }
+				HashMap<Integer, ArrayList<String>> rowHashMap = new HashMap<>();
 
-	      	  	rowHashMap.put(rowNumber, rowArrayList);
+				while (rows.hasNext()) {
+					Row currentRow = rows.next();
 
-		        rowNumber++;
-		      }
-		      
-		      sheetArrayList.add(rowHashMap);
-		      logger.info("end of read sheet");
-	      }
+					// skip header
+					if (rowNumber == 0) {
+						rowNumber++;
+						continue;
+					}
 
-	      workbook.close();
-	      
-	      return sheetArrayList;
-	    } catch (IOException e) {
-		logger.error(e.getMessage(), e);
-	      throw new RuntimeException("fail to parse Excel file: " + e.getMessage());
-	    }
-	  }
+					Iterator<Cell> cellsInRow = currentRow.iterator();
+
+					ArrayList<String> rowArrayList = new ArrayList<>();
+
+					while (cellsInRow.hasNext()) {
+						Cell currentCell = cellsInRow.next();
+
+						switch (currentCell.getCellType()) {
+						case STRING:
+							rowArrayList.add(currentCell.getRichStringCellValue().getString());
+							break;
+						case NUMERIC:
+							if (DateUtil.isCellDateFormatted(currentCell)) {
+								String date = dataFormatter.formatCellValue(currentCell);
+								rowArrayList.add(date);
+							} else {
+								rowArrayList.add(currentCell.getNumericCellValue() + "");
+							}
+							break;
+						case BOOLEAN:
+							rowArrayList.add(currentCell.getBooleanCellValue() + "");
+							break;
+						case FORMULA:
+							rowArrayList.add(currentCell.getCellFormula() + "");
+							break;
+							
+						default: rowArrayList.add("");
+						}
+					}
+
+					rowHashMap.put(rowNumber, rowArrayList);
+
+					rowNumber++;
+				}
+
+				sheetArrayList.add(rowHashMap);
+				
+				logger.info("end of read sheet");
+			}
+
+			workbook.close();
+
+			return sheetArrayList;
+		} catch (IOException e) {
+			logger.error(e.getMessage(), e);
+			
+			throw new RuntimeException("fail to parse Excel file: " + e.getMessage());
+		}
+	}
 }

@@ -19,6 +19,10 @@
 	</properties>
 	<dependencies>
 		<dependency>
+	      <groupId>org.springframework.boot</groupId>
+	      <artifactId>spring-boot-starter-data-jpa</artifactId>
+	    </dependency>
+		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
 		</dependency>
@@ -40,6 +44,13 @@
 		    <artifactId>itextpdf</artifactId>
 		    <version>5.5.9</version>
 		</dependency>
+		
+		<dependency>
+		    <groupId>com.microsoft.sqlserver</groupId>
+		    <artifactId>mssql-jdbc</artifactId>
+		    <version>6.3.6.jre8-preview</version>
+		</dependency>
+		
 	</dependencies>
 
 	<build>

@@ -18,25 +18,25 @@ import com.itextpdf.text.pdf.PdfStructTreeController.returnType;
 @Service
 public class ExcelService {
 	private static final Logger logger = LoggerFactory.getLogger(ExcelService.class);
-	
+
 	@Autowired
 	PdfService pdfService;
-	
+
 	public ArrayList<String> save(MultipartFile file) {
 		ArrayList<String> filenameArrayList = new ArrayList();
-	    try {
-	      ArrayList<HashMap<Integer, ArrayList<String>>> dataArrayList = ExcelHelper.convertExcel(file.getInputStream());
-	      
-	      for (int i = 0; i < dataArrayList.size(); i++) {
-			  HashMap<Integer, ArrayList<String>> dataHashMap = dataArrayList.get(i);
-			  filenameArrayList.add(pdfService.createPdfDoc(dataHashMap, i + 1));
-	      }
+		try {
+			ArrayList<HashMap<Integer, ArrayList<String>>> dataArrayList = ExcelHelper.convertExcel(file.getInputStream());
 
-		   return filenameArrayList;
-	      
-	    } catch (IOException e) {
+			for (int i = 0; i < dataArrayList.size(); i++) {
+				HashMap<Integer, ArrayList<String>> dataHashMap = dataArrayList.get(i);
+				filenameArrayList.add(pdfService.createPdfDoc(dataHashMap, i + 1));
+			}
+
+			return filenameArrayList;
+
+		} catch (IOException e) {
 			logger.error(e.getMessage(), e);
-	      throw new RuntimeException("fail to store excel data: " + e.getMessage());
-	    }
-	  }
+			throw new RuntimeException("fail to store excel data: " + e.getMessage());
+		}
+	}
 }

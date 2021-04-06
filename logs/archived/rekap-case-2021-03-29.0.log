@@ -1,0 +1,132 @@
+2021-03-29 12:07:01,141 INFO org.springframework.boot.StartupInfoLogger [main] Starting RekapCaseApplication using Java 1.8.0_265 on Bleizings-MacBook-Pro.local with PID 871 (/Users/bleizing/Bleizing/Kerja/BRI/App/rekap-case/target/classes started by bleizing in /Users/bleizing/Bleizing/Kerja/BRI/App/rekap-case)
+2021-03-29 12:07:01,147 DEBUG org.springframework.boot.StartupInfoLogger [main] Running with Spring Boot v2.4.3, Spring v5.3.4
+2021-03-29 12:07:01,148 INFO org.springframework.boot.SpringApplication [main] No active profile set, falling back to default profiles: default
+2021-03-29 12:07:02,569 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [main] Tomcat initialized with port(s): 8380 (http)
+2021-03-29 12:07:02,586 INFO org.apache.juli.logging.DirectJDKLog [main] Initializing ProtocolHandler ["http-nio-8380"]
+2021-03-29 12:07:02,587 INFO org.apache.juli.logging.DirectJDKLog [main] Starting service [Tomcat]
+2021-03-29 12:07:02,588 INFO org.apache.juli.logging.DirectJDKLog [main] Starting Servlet engine: [Apache Tomcat/9.0.43]
+2021-03-29 12:07:02,671 INFO org.apache.juli.logging.DirectJDKLog [main] Initializing Spring embedded WebApplicationContext
+2021-03-29 12:07:02,672 INFO org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext [main] Root WebApplicationContext: initialization completed in 1434 ms
+2021-03-29 12:07:02,954 INFO org.springframework.scheduling.concurrent.ExecutorConfigurationSupport [main] Initializing ExecutorService 'applicationTaskExecutor'
+2021-03-29 12:07:03,137 INFO org.springframework.boot.autoconfigure.web.servlet.WelcomePageHandlerMapping [main] Adding welcome page: class path resource [static/index.html]
+2021-03-29 12:07:03,277 INFO org.apache.juli.logging.DirectJDKLog [main] Starting ProtocolHandler ["http-nio-8380"]
+2021-03-29 12:07:03,321 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [main] Tomcat started on port(s): 8380 (http) with context path ''
+2021-03-29 12:07:03,337 INFO org.springframework.boot.StartupInfoLogger [main] Started RekapCaseApplication in 3.166 seconds (JVM running for 4.398)
+2021-03-29 12:07:39,314 INFO org.apache.juli.logging.DirectJDKLog [http-nio-8380-exec-1] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-03-29 12:07:39,314 INFO org.springframework.web.servlet.FrameworkServlet [http-nio-8380-exec-1] Initializing Servlet 'dispatcherServlet'
+2021-03-29 12:07:39,316 INFO org.springframework.web.servlet.FrameworkServlet [http-nio-8380-exec-1] Completed initialization in 1 ms
+2021-03-29 12:07:47,964 INFO com.bleizing.rekapcase.controller.FileController [http-nio-8380-exec-5] process upload file = Rekap Case Trx 2021.xlsx
+2021-03-29 12:07:47,967 INFO com.bleizing.rekapcase.service.FileStorageService [http-nio-8380-exec-5] store file Rekap Case Trx 2021.xlsx success
+2021-03-29 12:07:47,969 INFO com.bleizing.rekapcase.controller.FileController [http-nio-8380-exec-5] Uploaded the file successfully: Rekap Case Trx 2021.xlsx with name Rekap Case Trx 2021.xlsx
+2021-03-29 12:07:49,064 INFO com.bleizing.rekapcase.helper.ExcelHelper [http-nio-8380-exec-5] read sheet = -2
+2021-03-29 12:07:49,226 INFO com.bleizing.rekapcase.helper.ExcelHelper [http-nio-8380-exec-5] end of read sheet
+2021-03-29 12:07:49,227 INFO com.bleizing.rekapcase.helper.ExcelHelper [http-nio-8380-exec-5] read sheet = -1
+2021-03-29 12:07:49,237 INFO com.bleizing.rekapcase.helper.ExcelHelper [http-nio-8380-exec-5] end of read sheet
+2021-03-29 12:07:49,295 INFO com.bleizing.rekapcase.service.PdfService [http-nio-8380-exec-5] create pdf = Rekap Transaksi Gagal Sistem  - Maret 2021.pdf
+2021-03-29 12:07:50,282 INFO com.bleizing.rekapcase.service.PdfService [http-nio-8380-exec-5] end of create pdf
+2021-03-29 12:07:50,282 INFO com.bleizing.rekapcase.service.PdfService [http-nio-8380-exec-5] create pdf = Rekap Transaksi Gagal Sistem Native - Maret 2021.pdf
+2021-03-29 12:07:50,393 INFO com.bleizing.rekapcase.service.PdfService [http-nio-8380-exec-5] end of create pdf
+2021-03-29 12:07:56,669 INFO com.bleizing.rekapcase.controller.FileController [http-nio-8380-exec-6] download file = /Users/bleizing/Bleizing/Kerja/BRI/App/rekap-case/downloads/Rekap Transaksi Gagal Sistem  - Maret 2021.pdf
+2021-03-29 12:08:47,610 INFO com.bleizing.rekapcase.controller.FileController [http-nio-8380-exec-8] process upload file = Rekap Case Trx 2021.xlsx
+2021-03-29 12:08:47,612 INFO com.bleizing.rekapcase.service.FileStorageService [http-nio-8380-exec-8] store file Rekap Case Trx 2021.xlsx success
+2021-03-29 12:08:47,613 INFO com.bleizing.rekapcase.controller.FileController [http-nio-8380-exec-8] Uploaded the file successfully: Rekap Case Trx 2021.xlsx with name Rekap Case Trx 2021.xlsx
+2021-03-29 12:08:47,795 INFO com.bleizing.rekapcase.helper.ExcelHelper [http-nio-8380-exec-8] read sheet = -2
+2021-03-29 12:08:47,824 INFO com.bleizing.rekapcase.helper.ExcelHelper [http-nio-8380-exec-8] end of read sheet
+2021-03-29 12:08:47,824 INFO com.bleizing.rekapcase.helper.ExcelHelper [http-nio-8380-exec-8] read sheet = -1
+2021-03-29 12:08:47,829 INFO com.bleizing.rekapcase.helper.ExcelHelper [http-nio-8380-exec-8] end of read sheet
+2021-03-29 12:08:47,830 INFO com.bleizing.rekapcase.service.PdfService [http-nio-8380-exec-8] create pdf = Rekap Transaksi Gagal Sistem  - Maret 2021.pdf
+2021-03-29 12:08:48,152 INFO com.bleizing.rekapcase.service.PdfService [http-nio-8380-exec-8] end of create pdf
+2021-03-29 12:08:48,152 INFO com.bleizing.rekapcase.service.PdfService [http-nio-8380-exec-8] create pdf = Rekap Transaksi Gagal Sistem Native - Maret 2021.pdf
+2021-03-29 12:08:48,223 INFO com.bleizing.rekapcase.service.PdfService [http-nio-8380-exec-8] end of create pdf
+2021-03-29 12:08:49,145 INFO com.bleizing.rekapcase.controller.FileController [http-nio-8380-exec-9] download file = /Users/bleizing/Bleizing/Kerja/BRI/App/rekap-case/downloads/Rekap Transaksi Gagal Sistem  - Maret 2021.pdf
+2021-03-29 12:09:12,279 INFO com.bleizing.rekapcase.controller.FileController [http-nio-8380-exec-10] process upload file = Rekap Case Trx 2021.xlsx
+2021-03-29 12:09:12,281 INFO com.bleizing.rekapcase.service.FileStorageService [http-nio-8380-exec-10] store file Rekap Case Trx 2021.xlsx success
+2021-03-29 12:09:12,282 INFO com.bleizing.rekapcase.controller.FileController [http-nio-8380-exec-10] Uploaded the file successfully: Rekap Case Trx 2021.xlsx with name Rekap Case Trx 2021.xlsx
+2021-03-29 12:09:12,417 INFO com.bleizing.rekapcase.helper.ExcelHelper [http-nio-8380-exec-10] read sheet = -2
+2021-03-29 12:09:12,462 INFO com.bleizing.rekapcase.helper.ExcelHelper [http-nio-8380-exec-10] end of read sheet
+2021-03-29 12:09:12,463 INFO com.bleizing.rekapcase.helper.ExcelHelper [http-nio-8380-exec-10] read sheet = -1
+2021-03-29 12:09:12,472 INFO com.bleizing.rekapcase.helper.ExcelHelper [http-nio-8380-exec-10] end of read sheet
+2021-03-29 12:09:12,475 INFO com.bleizing.rekapcase.service.PdfService [http-nio-8380-exec-10] create pdf = Rekap Transaksi Gagal Sistem  - Maret 2021.pdf
+2021-03-29 12:09:12,743 INFO com.bleizing.rekapcase.service.PdfService [http-nio-8380-exec-10] end of create pdf
+2021-03-29 12:09:12,744 INFO com.bleizing.rekapcase.service.PdfService [http-nio-8380-exec-10] create pdf = Rekap Transaksi Gagal Sistem Native - Maret 2021.pdf
+2021-03-29 12:09:12,792 INFO com.bleizing.rekapcase.service.PdfService [http-nio-8380-exec-10] end of create pdf
+2021-03-29 12:09:14,055 INFO com.bleizing.rekapcase.controller.FileController [http-nio-8380-exec-1] download file = /Users/bleizing/Bleizing/Kerja/BRI/App/rekap-case/downloads/Rekap Transaksi Gagal Sistem  - Maret 2021.pdf
+2021-03-29 12:10:23,597 INFO com.bleizing.rekapcase.controller.FileController [http-nio-8380-exec-4] process upload file = Rekap Case Trx 2021.xlsx
+2021-03-29 12:10:23,599 INFO com.bleizing.rekapcase.service.FileStorageService [http-nio-8380-exec-4] store file Rekap Case Trx 2021.xlsx success
+2021-03-29 12:10:23,600 INFO com.bleizing.rekapcase.controller.FileController [http-nio-8380-exec-4] Uploaded the file successfully: Rekap Case Trx 2021.xlsx with name Rekap Case Trx 2021.xlsx
+2021-03-29 12:10:23,698 INFO com.bleizing.rekapcase.helper.ExcelHelper [http-nio-8380-exec-4] read sheet = -2
+2021-03-29 12:10:23,733 INFO com.bleizing.rekapcase.helper.ExcelHelper [http-nio-8380-exec-4] end of read sheet
+2021-03-29 12:10:23,733 INFO com.bleizing.rekapcase.helper.ExcelHelper [http-nio-8380-exec-4] read sheet = -1
+2021-03-29 12:10:23,739 INFO com.bleizing.rekapcase.helper.ExcelHelper [http-nio-8380-exec-4] end of read sheet
+2021-03-29 12:10:23,740 INFO com.bleizing.rekapcase.service.PdfService [http-nio-8380-exec-4] create pdf = Rekap Transaksi Gagal Sistem  - Maret 2021.pdf
+2021-03-29 12:10:24,014 INFO com.bleizing.rekapcase.service.PdfService [http-nio-8380-exec-4] end of create pdf
+2021-03-29 12:10:24,015 INFO com.bleizing.rekapcase.service.PdfService [http-nio-8380-exec-4] create pdf = Rekap Transaksi Gagal Sistem Native - Maret 2021.pdf
+2021-03-29 12:10:24,087 INFO com.bleizing.rekapcase.service.PdfService [http-nio-8380-exec-4] end of create pdf
+2021-03-29 12:10:24,821 INFO com.bleizing.rekapcase.controller.FileController [http-nio-8380-exec-5] download file = /Users/bleizing/Bleizing/Kerja/BRI/App/rekap-case/downloads/Rekap Transaksi Gagal Sistem  - Maret 2021.pdf
+2021-03-29 12:11:54,956 INFO com.bleizing.rekapcase.controller.FileController [http-nio-8380-exec-8] process upload file = Rekap Case Trx 2021.xlsx
+2021-03-29 12:11:54,960 INFO com.bleizing.rekapcase.service.FileStorageService [http-nio-8380-exec-8] store file Rekap Case Trx 2021.xlsx success
+2021-03-29 12:11:54,961 INFO com.bleizing.rekapcase.controller.FileController [http-nio-8380-exec-8] Uploaded the file successfully: Rekap Case Trx 2021.xlsx with name Rekap Case Trx 2021.xlsx
+2021-03-29 12:11:55,046 INFO com.bleizing.rekapcase.helper.ExcelHelper [http-nio-8380-exec-8] read sheet = -2
+2021-03-29 12:11:55,067 INFO com.bleizing.rekapcase.helper.ExcelHelper [http-nio-8380-exec-8] end of read sheet
+2021-03-29 12:11:55,067 INFO com.bleizing.rekapcase.helper.ExcelHelper [http-nio-8380-exec-8] read sheet = -1
+2021-03-29 12:11:55,071 INFO com.bleizing.rekapcase.helper.ExcelHelper [http-nio-8380-exec-8] end of read sheet
+2021-03-29 12:11:55,072 INFO com.bleizing.rekapcase.service.PdfService [http-nio-8380-exec-8] create pdf = Rekap Transaksi Gagal Sistem  - Maret 2021.pdf
+2021-03-29 12:11:55,337 INFO com.bleizing.rekapcase.service.PdfService [http-nio-8380-exec-8] end of create pdf
+2021-03-29 12:11:55,337 INFO com.bleizing.rekapcase.service.PdfService [http-nio-8380-exec-8] create pdf = Rekap Transaksi Gagal Sistem Native - Maret 2021.pdf
+2021-03-29 12:11:55,396 INFO com.bleizing.rekapcase.service.PdfService [http-nio-8380-exec-8] end of create pdf
+2021-03-29 12:11:56,107 INFO com.bleizing.rekapcase.controller.FileController [http-nio-8380-exec-9] download file = /Users/bleizing/Bleizing/Kerja/BRI/App/rekap-case/downloads/Rekap Transaksi Gagal Sistem  - Maret 2021.pdf
+2021-03-29 12:12:40,934 INFO com.bleizing.rekapcase.controller.FileController [http-nio-8380-exec-10] process upload file = Rekap Case Trx 2021.xlsx
+2021-03-29 12:12:40,936 INFO com.bleizing.rekapcase.service.FileStorageService [http-nio-8380-exec-10] store file Rekap Case Trx 2021.xlsx success
+2021-03-29 12:12:40,936 INFO com.bleizing.rekapcase.controller.FileController [http-nio-8380-exec-10] Uploaded the file successfully: Rekap Case Trx 2021.xlsx with name Rekap Case Trx 2021.xlsx
+2021-03-29 12:12:41,035 INFO com.bleizing.rekapcase.helper.ExcelHelper [http-nio-8380-exec-10] read sheet = -2
+2021-03-29 12:12:41,072 INFO com.bleizing.rekapcase.helper.ExcelHelper [http-nio-8380-exec-10] end of read sheet
+2021-03-29 12:12:41,072 INFO com.bleizing.rekapcase.helper.ExcelHelper [http-nio-8380-exec-10] read sheet = -1
+2021-03-29 12:12:41,077 INFO com.bleizing.rekapcase.helper.ExcelHelper [http-nio-8380-exec-10] end of read sheet
+2021-03-29 12:12:41,078 INFO com.bleizing.rekapcase.service.PdfService [http-nio-8380-exec-10] create pdf = Rekap Transaksi Gagal Sistem  - Maret 2021.pdf
+2021-03-29 12:12:41,349 INFO com.bleizing.rekapcase.service.PdfService [http-nio-8380-exec-10] end of create pdf
+2021-03-29 12:12:41,349 INFO com.bleizing.rekapcase.service.PdfService [http-nio-8380-exec-10] create pdf = Rekap Transaksi Gagal Sistem Native - Maret 2021.pdf
+2021-03-29 12:12:41,402 INFO com.bleizing.rekapcase.service.PdfService [http-nio-8380-exec-10] end of create pdf
+2021-03-29 12:12:42,161 INFO com.bleizing.rekapcase.controller.FileController [http-nio-8380-exec-1] download file = /Users/bleizing/Bleizing/Kerja/BRI/App/rekap-case/downloads/Rekap Transaksi Gagal Sistem  - Maret 2021.pdf
+2021-03-29 12:12:58,264 INFO com.bleizing.rekapcase.controller.FileController [http-nio-8380-exec-3] process upload file = Rekap Case Trx 2021.xlsx
+2021-03-29 12:12:58,266 INFO com.bleizing.rekapcase.service.FileStorageService [http-nio-8380-exec-3] store file Rekap Case Trx 2021.xlsx success
+2021-03-29 12:12:58,266 INFO com.bleizing.rekapcase.controller.FileController [http-nio-8380-exec-3] Uploaded the file successfully: Rekap Case Trx 2021.xlsx with name Rekap Case Trx 2021.xlsx
+2021-03-29 12:12:58,343 INFO com.bleizing.rekapcase.helper.ExcelHelper [http-nio-8380-exec-3] read sheet = -2
+2021-03-29 12:12:58,356 INFO com.bleizing.rekapcase.helper.ExcelHelper [http-nio-8380-exec-3] end of read sheet
+2021-03-29 12:12:58,357 INFO com.bleizing.rekapcase.helper.ExcelHelper [http-nio-8380-exec-3] read sheet = -1
+2021-03-29 12:12:58,359 INFO com.bleizing.rekapcase.helper.ExcelHelper [http-nio-8380-exec-3] end of read sheet
+2021-03-29 12:12:58,360 INFO com.bleizing.rekapcase.service.PdfService [http-nio-8380-exec-3] create pdf = Rekap Transaksi Gagal Sistem  - Maret 2021.pdf
+2021-03-29 12:12:58,503 INFO com.bleizing.rekapcase.service.PdfService [http-nio-8380-exec-3] end of create pdf
+2021-03-29 12:12:58,528 INFO com.bleizing.rekapcase.service.PdfService [http-nio-8380-exec-3] create pdf = Rekap Transaksi Gagal Sistem Native - Maret 2021.pdf
+2021-03-29 12:12:58,565 INFO com.bleizing.rekapcase.service.PdfService [http-nio-8380-exec-3] end of create pdf
+2021-03-29 12:12:59,579 INFO com.bleizing.rekapcase.controller.FileController [http-nio-8380-exec-4] download file = /Users/bleizing/Bleizing/Kerja/BRI/App/rekap-case/downloads/Rekap Transaksi Gagal Sistem  - Maret 2021.pdf
+2021-03-29 12:13:59,240 INFO com.bleizing.rekapcase.controller.FileController [http-nio-8380-exec-5] process upload file = Rekap Case Trx 2021.xlsx
+2021-03-29 12:13:59,242 INFO com.bleizing.rekapcase.service.FileStorageService [http-nio-8380-exec-5] store file Rekap Case Trx 2021.xlsx success
+2021-03-29 12:13:59,243 INFO com.bleizing.rekapcase.controller.FileController [http-nio-8380-exec-5] Uploaded the file successfully: Rekap Case Trx 2021.xlsx with name Rekap Case Trx 2021.xlsx
+2021-03-29 12:13:59,314 INFO com.bleizing.rekapcase.helper.ExcelHelper [http-nio-8380-exec-5] read sheet = -2
+2021-03-29 12:13:59,325 INFO com.bleizing.rekapcase.helper.ExcelHelper [http-nio-8380-exec-5] end of read sheet
+2021-03-29 12:13:59,326 INFO com.bleizing.rekapcase.helper.ExcelHelper [http-nio-8380-exec-5] read sheet = -1
+2021-03-29 12:13:59,328 INFO com.bleizing.rekapcase.helper.ExcelHelper [http-nio-8380-exec-5] end of read sheet
+2021-03-29 12:13:59,329 INFO com.bleizing.rekapcase.service.PdfService [http-nio-8380-exec-5] create pdf = Rekap Transaksi Gagal Sistem  - Maret 2021.pdf
+2021-03-29 12:13:59,483 INFO com.bleizing.rekapcase.service.PdfService [http-nio-8380-exec-5] end of create pdf
+2021-03-29 12:13:59,484 INFO com.bleizing.rekapcase.service.PdfService [http-nio-8380-exec-5] create pdf = Rekap Transaksi Gagal Sistem Native - Maret 2021.pdf
+2021-03-29 12:13:59,520 INFO com.bleizing.rekapcase.service.PdfService [http-nio-8380-exec-5] end of create pdf
+2021-03-29 12:14:00,492 INFO com.bleizing.rekapcase.controller.FileController [http-nio-8380-exec-7] download file = /Users/bleizing/Bleizing/Kerja/BRI/App/rekap-case/downloads/Rekap Transaksi Gagal Sistem  - Maret 2021.pdf
+2021-03-29 12:14:36,093 INFO com.bleizing.rekapcase.controller.FileController [http-nio-8380-exec-8] process upload file = Rekap Case Trx 2021.xlsx
+2021-03-29 12:14:36,096 INFO com.bleizing.rekapcase.service.FileStorageService [http-nio-8380-exec-8] store file Rekap Case Trx 2021.xlsx success
+2021-03-29 12:14:36,096 INFO com.bleizing.rekapcase.controller.FileController [http-nio-8380-exec-8] Uploaded the file successfully: Rekap Case Trx 2021.xlsx with name Rekap Case Trx 2021.xlsx
+2021-03-29 12:14:36,169 INFO com.bleizing.rekapcase.helper.ExcelHelper [http-nio-8380-exec-8] read sheet = -2
+2021-03-29 12:14:36,183 INFO com.bleizing.rekapcase.helper.ExcelHelper [http-nio-8380-exec-8] end of read sheet
+2021-03-29 12:14:36,183 INFO com.bleizing.rekapcase.helper.ExcelHelper [http-nio-8380-exec-8] read sheet = -1
+2021-03-29 12:14:36,185 INFO com.bleizing.rekapcase.helper.ExcelHelper [http-nio-8380-exec-8] end of read sheet
+2021-03-29 12:14:36,186 INFO com.bleizing.rekapcase.service.PdfService [http-nio-8380-exec-8] create pdf = Rekap Transaksi Gagal Sistem  - Maret 2021.pdf
+2021-03-29 12:14:36,320 INFO com.bleizing.rekapcase.service.PdfService [http-nio-8380-exec-8] end of create pdf
+2021-03-29 12:14:36,321 INFO com.bleizing.rekapcase.service.PdfService [http-nio-8380-exec-8] create pdf = Rekap Transaksi Gagal Sistem Native - Maret 2021.pdf
+2021-03-29 12:14:36,356 INFO com.bleizing.rekapcase.service.PdfService [http-nio-8380-exec-8] end of create pdf
+2021-03-29 12:14:37,723 INFO com.bleizing.rekapcase.controller.FileController [http-nio-8380-exec-9] download file = /Users/bleizing/Bleizing/Kerja/BRI/App/rekap-case/downloads/Rekap Transaksi Gagal Sistem  - Maret 2021.pdf
+2021-03-29 12:16:11,361 INFO org.springframework.boot.StartupInfoLogger [main] Starting RekapCaseApplicationTests using Java 14.0.2 on Bleizings-MacBook-Pro.local with PID 1149 (started by bleizing in /Users/bleizing/Bleizing/Kerja/BRI/App/rekap-case)
+2021-03-29 12:16:11,363 DEBUG org.springframework.boot.StartupInfoLogger [main] Running with Spring Boot v2.4.3, Spring v5.3.4
+2021-03-29 12:16:11,365 INFO org.springframework.boot.SpringApplication [main] No active profile set, falling back to default profiles: default
+2021-03-29 12:16:12,426 INFO org.springframework.scheduling.concurrent.ExecutorConfigurationSupport [main] Initializing ExecutorService 'applicationTaskExecutor'
+2021-03-29 12:16:12,522 INFO org.springframework.boot.autoconfigure.web.servlet.WelcomePageHandlerMapping [main] Adding welcome page: class path resource [static/index.html]
+2021-03-29 12:16:12,690 INFO org.springframework.boot.StartupInfoLogger [main] Started RekapCaseApplicationTests in 1.772 seconds (JVM running for 2.658)
+2021-03-29 12:16:13,182 INFO org.springframework.scheduling.concurrent.ExecutorConfigurationSupport [SpringContextShutdownHook] Shutting down ExecutorService 'applicationTaskExecutor'
