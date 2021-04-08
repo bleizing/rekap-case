@@ -52,7 +52,7 @@ public class ExcelHelper {
 		return true;
 	}
 
-	public ArrayList<HashMap<Integer, ArrayList<String>>> convertExcel(InputStream is) {
+	public void convertExcel(InputStream is) {
 		DataFormatter dataFormatter = new DataFormatter(new Locale("id", "ID"));
 		try {
 			Workbook workbook = new XSSFWorkbook(is);
@@ -119,7 +119,7 @@ public class ExcelHelper {
 								rowArrayList.add(currentCell.getCellFormula() + "");
 								break;
 								
-							default: rowArrayList.add("");
+							default: rowArrayList.add(" ");
 						}
 					}
 
@@ -148,8 +148,6 @@ public class ExcelHelper {
 			}
 
 			workbook.close();
-
-			return sheetArrayList;
 		} catch (IOException e) {
 			logger.error(e.getMessage(), e);
 			

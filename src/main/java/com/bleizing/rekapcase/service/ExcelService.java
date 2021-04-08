@@ -25,17 +25,20 @@ public class ExcelService {
 	@Autowired
 	ExcelHelper excelHelper;
 
-	public ArrayList<String> save(MultipartFile file) {
+	public void save(MultipartFile file) {
 		ArrayList<String> filenameArrayList = new ArrayList();
 		try {
-			ArrayList<HashMap<Integer, ArrayList<String>>> dataArrayList = excelHelper.convertExcel(file.getInputStream());
-
-			for (int i = 0; i < dataArrayList.size(); i++) {
-				HashMap<Integer, ArrayList<String>> dataHashMap = dataArrayList.get(i);
-				filenameArrayList.add(pdfService.createPdfDoc(dataHashMap, i + 1));
-			}
-
-			return filenameArrayList;
+			excelHelper.convertExcel(file.getInputStream());
+			pdfService.createPdfDoc();
+			
+//			ArrayList<HashMap<Integer, ArrayList<String>>> dataArrayList = 
+//
+//			for (int i = 0; i < dataArrayList.size(); i++) {
+//				HashMap<Integer, ArrayList<String>> dataHashMap = dataArrayList.get(i);
+//				filenameArrayList.add(pdfService.createPdfDoc(dataHashMap, i + 1));
+//			}
+//
+//			return filenameArrayList;
 
 		} catch (IOException e) {
 			logger.error(e.getMessage(), e);

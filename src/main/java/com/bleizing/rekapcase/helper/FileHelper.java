@@ -4,9 +4,7 @@ import com.bleizing.rekapcase.util.DateUtils;
 import com.itextpdf.text.pdf.PdfStructTreeController.returnType;
 
 public class FileHelper {
-	public static String createFileNameByDate(String date, int type) {
-		String dateString = DateUtils.getStartDate(date);
-		String monthYear = DateUtils.getMonthYear(dateString);
+	public static String createFileNameByDate(String monthYear, int type) {
 		String filename = "Rekap Transaksi Gagal Sistem ";
 		filename += (type == 1) ? "Native" : "";
 		filename += " - " + monthYear;

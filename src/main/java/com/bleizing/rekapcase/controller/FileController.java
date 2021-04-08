@@ -24,7 +24,9 @@ import org.springframework.web.multipart.MultipartFile;
 
 import com.bleizing.rekapcase.helper.ExcelHelper;
 import com.bleizing.rekapcase.message.ResponseMessage;
+import com.bleizing.rekapcase.model.MFile;
 import com.bleizing.rekapcase.property.FileStorageProperties;
+import com.bleizing.rekapcase.repository.MFileRepository;
 import com.bleizing.rekapcase.service.ExcelService;
 import com.bleizing.rekapcase.service.FileStorageService;
 
@@ -36,10 +38,13 @@ public class FileController {
 	private FileStorageService fileStorageService;
 
 	@Autowired
-	ExcelService fileService;
+	private ExcelService fileService;
+	
+	@Autowired
+	private MFileRepository mFileRepository;
 
 	@Autowired
-	FileStorageProperties fileStorageProperties;
+	private FileStorageProperties fileStorageProperties;
 
 	@PostMapping("/upload")
 	public ResponseEntity<ArrayList<ResponseMessage>> uploadFile(@RequestParam("file") MultipartFile file) {
@@ -51,16 +56,19 @@ public class FileController {
 		message = "Uploaded the file successfully: " + file.getOriginalFilename() + " with name " + fileName;
 		logger.info(message);
 
-		ArrayList<String> filenameArrayList = new ArrayList<>();
+		ArrayList<MFile> mFileArrayList = new ArrayList<>();
 		ArrayList<ResponseMessage> responseMessages = new ArrayList<>();
 
 		if (ExcelHelper.hasExcelFormat(file)) {
 			try {
-				filenameArrayList = (fileService.save(file));
+				fileService.save(file);
+				
+				mFileArrayList = mFileRepository.getLastData();
 
-				if (filenameArrayList.size() > 0) {
-					for (int i = 0; i < filenameArrayList.size(); i++) {
-						responseMessages.add(new ResponseMessage(message, filenameArrayList.get(i)));
+				if (mFileArrayList.size() > 0) {
+					for (MFile mFile : mFileArrayList) {
+						String filename = "downloadFile/" + mFile.getName();
+						responseMessages.add(new ResponseMessage(message, filename));
 					}
 				}
 
